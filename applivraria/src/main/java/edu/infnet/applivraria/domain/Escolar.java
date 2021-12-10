@@ -1,5 +1,6 @@
 package edu.infnet.applivraria.domain;
 
+import edu.infnet.applivraria.exceptions.SerieInvalidaException;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
 
 public class Escolar extends Produto {
@@ -41,7 +42,11 @@ public class Escolar extends Produto {
 		return serie;
 	}
 
-	public void setSerie(int serie) {
+	public void setSerie(int serie) throws SerieInvalidaException {
+		if(serie <= 0) {
+			throw new SerieInvalidaException("A série não pode ser nula ou negativa!");
+		}
+		
 		this.serie = serie;
 	}
 

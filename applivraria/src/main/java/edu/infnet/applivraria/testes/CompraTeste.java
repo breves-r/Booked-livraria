@@ -9,7 +9,15 @@ import edu.infnet.applivraria.domain.Escolar;
 import edu.infnet.applivraria.domain.Informatica;
 import edu.infnet.applivraria.domain.Livro;
 import edu.infnet.applivraria.domain.Produto;
+import edu.infnet.applivraria.exceptions.ClassificacaoEtariaInvalidaException;
+import edu.infnet.applivraria.exceptions.ClienteNuloException;
+import edu.infnet.applivraria.exceptions.CpfInvalidoException;
+import edu.infnet.applivraria.exceptions.EmailInvalidoException;
+import edu.infnet.applivraria.exceptions.NomeInvalidoException;
+import edu.infnet.applivraria.exceptions.SerieInvalidaException;
+import edu.infnet.applivraria.exceptions.TelefoneInvalidoException;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
+import edu.infnet.applivraria.exceptions.listaProdutosInvalidaException;
 
 public class CompraTeste {
 
@@ -23,7 +31,7 @@ public class CompraTeste {
 			escolar.setTemRespostas(true);
 			
 			produtos.add(escolar);
-		} catch (ValorInvalidoException e) {
+		} catch (ValorInvalidoException | SerieInvalidaException e) {
 			System.out.println(e.getMessage());
 		}
 		
@@ -49,19 +57,31 @@ public class CompraTeste {
 			livro.setIlustrado(false);
 			
 			produtos.add(livro);
-		} catch (ValorInvalidoException e) {
+		} catch (ValorInvalidoException | ClassificacaoEtariaInvalidaException e) {
 			System.out.println(e.getMessage());
 		}
 		
 		
-		Cliente cliente = new Cliente("Rafaela","021999999999","rafaela@gmail.com","123.456.789-10");
-
-		Compra compra = new Compra();
-		compra.setCliente(cliente);
-		compra.setformaPagamento("Cartao");
-		compra.setListaProdutos(produtos);
 		
-		System.out.println(compra);
+		Cliente cliente = null;
+		try {
+			cliente = new Cliente("Rafaela","021999999999","rafaela@gmail.com","123.456.789-10");
+			
+		} catch (NomeInvalidoException | TelefoneInvalidoException | EmailInvalidoException | CpfInvalidoException e) {
+			System.out.println(e.getMessage());
+		}
+		
+
+		try {
+			Compra compra = new Compra(cliente);
+			compra.setformaPagamento("Cartao");
+			compra.setListaProdutos(produtos);
+			
+			compra.impressao();;
+		} catch (ClienteNuloException | listaProdutosInvalidaException e) {
+			System.out.println(e.getMessage());
+		}
+
 	}
 
 }

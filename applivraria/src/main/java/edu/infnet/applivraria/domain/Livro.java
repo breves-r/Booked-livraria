@@ -1,5 +1,6 @@
 package edu.infnet.applivraria.domain;
 
+import edu.infnet.applivraria.exceptions.ClassificacaoEtariaInvalidaException;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
 
 public class Livro extends Produto {
@@ -49,7 +50,11 @@ public class Livro extends Produto {
 		return classificacaoEtaria;
 	}
 
-	public void setClassificacaoEtaria(int classificacaoEtaria) {
+	public void setClassificacaoEtaria(int classificacaoEtaria) throws ClassificacaoEtariaInvalidaException {
+		if(classificacaoEtaria<0) {
+			throw new ClassificacaoEtariaInvalidaException("A classificação etária não pode ser negativa!");
+		}
+		
 		this.classificacaoEtaria = classificacaoEtaria;
 	}
 

@@ -3,6 +3,8 @@ package edu.infnet.applivraria.testes;
 import edu.infnet.applivraria.domain.Escolar;
 import edu.infnet.applivraria.domain.Informatica;
 import edu.infnet.applivraria.domain.Livro;
+import edu.infnet.applivraria.exceptions.ClassificacaoEtariaInvalidaException;
+import edu.infnet.applivraria.exceptions.SerieInvalidaException;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
 
 public class ProdutoTeste {
@@ -15,7 +17,7 @@ public class ProdutoTeste {
 			escolar.setTemRespostas(true);
 			
 			System.out.println(escolar);
-		} catch (ValorInvalidoException e) {
+		} catch (ValorInvalidoException | SerieInvalidaException e) {
 			System.out.println(e.getMessage());
 		}
 		
@@ -42,7 +44,7 @@ public class ProdutoTeste {
 			livro.setIlustrado(false);
 			
 			System.out.println(livro);
-		} catch (ValorInvalidoException e) {
+		} catch (ValorInvalidoException | ClassificacaoEtariaInvalidaException e) {
 			System.out.println(e.getMessage());
 		}
 	}

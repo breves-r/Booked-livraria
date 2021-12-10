@@ -1,12 +1,33 @@
 package edu.infnet.applivraria.domain;
 
+import edu.infnet.applivraria.exceptions.CpfInvalidoException;
+import edu.infnet.applivraria.exceptions.EmailInvalidoException;
+import edu.infnet.applivraria.exceptions.NomeInvalidoException;
+import edu.infnet.applivraria.exceptions.TelefoneInvalidoException;
+
 public class Cliente {
 	private String nome;
 	private String telefone;
 	private String email;
 	private String cpf;
 	
-	public Cliente(String nome, String telefone, String email, String cpf) {
+	public Cliente(String nome, String telefone, String email, String cpf) throws NomeInvalidoException, TelefoneInvalidoException, EmailInvalidoException, CpfInvalidoException {
+		if(nome == null) {
+			throw new NomeInvalidoException("O preenchimento do nome é obrigatório!");
+		}
+		
+		if(telefone == null) {
+			throw new TelefoneInvalidoException("O preenchimento do telefone é obrigatório!");
+		}
+		
+		if(email == null) {
+			throw new EmailInvalidoException("O preenchimento do email é obrigatório!");
+		}
+		
+		if(cpf == null) {
+			throw new CpfInvalidoException("O preenchimento do cpf é obrigatório!");
+		}
+		
 		this.nome = nome;
 		this.telefone = telefone;
 		this.email = email;

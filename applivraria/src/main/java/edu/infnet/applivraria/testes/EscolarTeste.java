@@ -1,6 +1,7 @@
 package edu.infnet.applivraria.testes;
 
 import edu.infnet.applivraria.domain.Escolar;
+import edu.infnet.applivraria.exceptions.SerieInvalidaException;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
 
 public class EscolarTeste {
@@ -14,7 +15,7 @@ public class EscolarTeste {
 			
 			System.out.println(escolar);
 			System.out.println(escolar.calcularValorFinal());
-		} catch (ValorInvalidoException e) {
+		} catch (ValorInvalidoException | SerieInvalidaException e) {
 			System.out.println(e.getMessage());
 		}
 		
@@ -26,7 +27,19 @@ public class EscolarTeste {
 			
 			System.out.println(escolar);
 			System.out.println(escolar.calcularValorFinal());
-		} catch (ValorInvalidoException e) {
+		} catch (ValorInvalidoException | SerieInvalidaException e) {
+			System.out.println(e.getMessage());
+		}
+		
+		try {
+			Escolar escolar = new Escolar("Geografia geral e do Brasil", "Fulaninho",500, 350);
+			escolar.setDisciplina("Geografia");
+			escolar.setSerie(0);
+			escolar.setTemRespostas(true);
+			
+			System.out.println(escolar);
+			System.out.println(escolar.calcularValorFinal());
+		} catch (ValorInvalidoException | SerieInvalidaException e) {
 			System.out.println(e.getMessage());
 		}
 	}
