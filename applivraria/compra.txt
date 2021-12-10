@@ -1,0 +1,5 @@
+C;Cartão;Rafaela;021999999999;rafaela@gmail.com;123.456.789-10
+E;Geografia geral e do Brasil;Fulaninho;500;350;Geografia;5;true
+I;Java:Guia Avançado;Elberth;450;380;Java;true;true
+L;A Casa na Montanha;King Steph;450;70;Terror;18;false
+B;77
