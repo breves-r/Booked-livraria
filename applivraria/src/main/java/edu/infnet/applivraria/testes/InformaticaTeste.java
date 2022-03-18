@@ -1,7 +1,7 @@
 package edu.infnet.applivraria.testes;
 
-import edu.infnet.applivraria.domain.Informatica;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
+import edu.infnet.applivraria.model.domain.Informatica;
 
 public class InformaticaTeste {
 

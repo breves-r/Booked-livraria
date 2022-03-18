@@ -5,8 +5,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import edu.infnet.applivraria.domain.Aluno;
-import edu.infnet.applivraria.service.AlunoService;
+import edu.infnet.applivraria.model.domain.Aluno;
+import edu.infnet.applivraria.model.service.AlunoService;
 
 @Component
 public class AlunoLoader implements ApplicationRunner{

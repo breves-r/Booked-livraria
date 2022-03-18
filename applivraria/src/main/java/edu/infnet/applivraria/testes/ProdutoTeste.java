@@ -1,11 +1,11 @@
 package edu.infnet.applivraria.testes;
 
-import edu.infnet.applivraria.domain.Escolar;
-import edu.infnet.applivraria.domain.Informatica;
-import edu.infnet.applivraria.domain.Livro;
 import edu.infnet.applivraria.exceptions.ClassificacaoEtariaInvalidaException;
 import edu.infnet.applivraria.exceptions.SerieInvalidaException;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
+import edu.infnet.applivraria.model.domain.Escolar;
+import edu.infnet.applivraria.model.domain.Informatica;
+import edu.infnet.applivraria.model.domain.Livro;
 
 public class ProdutoTeste {
 

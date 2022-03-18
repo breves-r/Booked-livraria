@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
-import edu.infnet.applivraria.domain.Aluno;
-import edu.infnet.applivraria.domain.Usuario;
-import edu.infnet.applivraria.service.AlunoService;
+import edu.infnet.applivraria.model.domain.Aluno;
+import edu.infnet.applivraria.model.domain.Usuario;
+import edu.infnet.applivraria.model.service.AlunoService;
 
 @Controller
 public class AlunoController {
@@ -39,7 +39,8 @@ public class AlunoController {
 		
 		model.addAttribute("mensagem", "O aluno " + aluno.getNome() + " foi incluído com sucesso!!!");
 
-		return telaLista(model, usuario);
+		return "redirect:/alunos";
+		//return telaLista(model, usuario);
 	}
 	
 	@GetMapping(value = "/aluno/{id}/excluir")
@@ -54,7 +55,8 @@ public class AlunoController {
 			model.addAttribute("mensagem", "Aluno inexistente. Imporssível excluir!"); 
 		} 
 		
-		return telaLista(model, usuario);
+		return "redirect:/alunos";
+		//return telaLista(model, usuario);
 	} 
 
 } 

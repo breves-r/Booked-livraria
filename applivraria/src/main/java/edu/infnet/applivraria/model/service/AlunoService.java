@@ -1,12 +1,13 @@
-package edu.infnet.applivraria.service;
+package edu.infnet.applivraria.model.service;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import edu.infnet.applivraria.domain.Aluno;
-import edu.infnet.applivraria.domain.Usuario;
-import edu.infnet.applivraria.repository.AlunoRepository;
+
+import edu.infnet.applivraria.model.domain.Aluno;
+import edu.infnet.applivraria.model.domain.Usuario;
+import edu.infnet.applivraria.model.repository.AlunoRepository;
 
 
 @Service

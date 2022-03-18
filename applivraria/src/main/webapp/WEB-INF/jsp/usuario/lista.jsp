@@ -5,14 +5,19 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
 	<title>Booked</title>
 </head>
 
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	
+	<header class="masthead">
 
-	<div class="container fixed-top" >	
+	<div class="container" >	
 
 		<h4>Cadastramento de usuários:</h4>
 
@@ -24,7 +29,7 @@
 
 		<c:if test="${not empty usuarioLista}">
 		  	<p>Quantidade de usuários cadastrados: ${usuarioLista.size()}</p>            
-		  	<table class="table table-striped">
+		  	<table class="table table-dark table-striped">
 			    <thead>
 			      <tr>
 			        <th>Nome</th>
@@ -67,5 +72,6 @@
 	  		<p>Não existem usuários cadastrados!!!</p>            
 	  	</c:if>
 	</div>
+	</header>
 </body>
 </html>

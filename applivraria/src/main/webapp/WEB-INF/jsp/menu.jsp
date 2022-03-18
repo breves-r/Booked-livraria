@@ -17,12 +17,16 @@
 				<c:if test="${not empty user}">
 					<li class="nav-item"><a class="nav-link" href="/usuarios">Usuário</a></li>
 					<li class="nav-item"><a class="nav-link" href="/alunos">Aluno</a></li>
+					<li class="nav-item"><a class="nav-link" href="/produtos">Produtos</a></li>
+					<li class="nav-item"><a class="nav-link" href="/livros">Livro</a></li>
+					<li class="nav-item"><a class="nav-link" href="/escolares">Escolar</a></li>
+					<li class="nav-item"><a class="nav-link" href="/informaticos">Informática</a></li>
 				</c:if>
-				<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+			<!-- 	<li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
 				<li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
 				<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
 				<li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-				<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+				<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
 
 				<c:if test="${empty user}">
 					<li class="nav-item"><a class="nav-link" href="/login">Login</a></li>

@@ -1,8 +1,8 @@
 package edu.infnet.applivraria.testes;
 
-import edu.infnet.applivraria.domain.Livro;
 import edu.infnet.applivraria.exceptions.ClassificacaoEtariaInvalidaException;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
+import edu.infnet.applivraria.model.domain.Livro;
 
 public class LivroTeste {
 	public static void main(String[] args) {

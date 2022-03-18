@@ -1,4 +1,4 @@
-package edu.infnet.applivraria.domain;
+package edu.infnet.applivraria.model.domain;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

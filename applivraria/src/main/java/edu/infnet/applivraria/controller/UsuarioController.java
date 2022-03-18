@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import edu.infnet.applivraria.domain.Usuario;
-import edu.infnet.applivraria.service.UsuarioService;
+import edu.infnet.applivraria.model.domain.Usuario;
+import edu.infnet.applivraria.model.service.UsuarioService;
 
 
 @Controller

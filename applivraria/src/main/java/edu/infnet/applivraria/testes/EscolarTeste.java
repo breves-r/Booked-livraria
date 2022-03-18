@@ -1,8 +1,8 @@
 package edu.infnet.applivraria.testes;
 
-import edu.infnet.applivraria.domain.Escolar;
 import edu.infnet.applivraria.exceptions.SerieInvalidaException;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
+import edu.infnet.applivraria.model.domain.Escolar;
 
 public class EscolarTeste {
 

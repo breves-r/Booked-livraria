@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import edu.infnet.applivraria.domain.Usuario;
-import edu.infnet.applivraria.service.UsuarioService;
+import edu.infnet.applivraria.model.domain.Usuario;
+import edu.infnet.applivraria.model.service.UsuarioService;
 
 @SessionAttributes("user")
 @Controller

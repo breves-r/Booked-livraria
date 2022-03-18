@@ -1,8 +1,8 @@
-package edu.infnet.applivraria.repository;
+package edu.infnet.applivraria.model.repository;
 
 import org.springframework.stereotype.Repository;
 
-import edu.infnet.applivraria.domain.Aluno;
+import edu.infnet.applivraria.model.domain.Aluno;
 
 import java.util.List;
 

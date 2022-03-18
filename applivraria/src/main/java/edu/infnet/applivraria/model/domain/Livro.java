@@ -1,12 +1,22 @@
-package edu.infnet.applivraria.domain;
+package edu.infnet.applivraria.model.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import edu.infnet.applivraria.exceptions.ClassificacaoEtariaInvalidaException;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
 
+
+@Entity
+@Table(name = "TLivro")
 public class Livro extends Produto {
 	private String genero;
 	private int classificacaoEtaria;
 	private boolean ilustrado;
+	
+	
+	public Livro() {
+	}
 
 	public Livro(String titulo, String autor, int qtdePaginas, float valor) throws ValorInvalidoException {
 		super(titulo, autor, qtdePaginas, valor);

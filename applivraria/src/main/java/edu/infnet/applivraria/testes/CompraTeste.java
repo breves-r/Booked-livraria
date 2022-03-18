@@ -3,12 +3,6 @@ package edu.infnet.applivraria.testes;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.infnet.applivraria.domain.Cliente;
-import edu.infnet.applivraria.domain.Compra;
-import edu.infnet.applivraria.domain.Escolar;
-import edu.infnet.applivraria.domain.Informatica;
-import edu.infnet.applivraria.domain.Livro;
-import edu.infnet.applivraria.domain.Produto;
 import edu.infnet.applivraria.exceptions.ClassificacaoEtariaInvalidaException;
 import edu.infnet.applivraria.exceptions.ClienteNuloException;
 import edu.infnet.applivraria.exceptions.CpfInvalidoException;
@@ -18,6 +12,12 @@ import edu.infnet.applivraria.exceptions.SerieInvalidaException;
 import edu.infnet.applivraria.exceptions.TelefoneInvalidoException;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
 import edu.infnet.applivraria.exceptions.listaProdutosInvalidaException;
+import edu.infnet.applivraria.model.domain.Cliente;
+import edu.infnet.applivraria.model.domain.Compra;
+import edu.infnet.applivraria.model.domain.Escolar;
+import edu.infnet.applivraria.model.domain.Informatica;
+import edu.infnet.applivraria.model.domain.Livro;
+import edu.infnet.applivraria.model.domain.Produto;
 
 public class CompraTeste {
 

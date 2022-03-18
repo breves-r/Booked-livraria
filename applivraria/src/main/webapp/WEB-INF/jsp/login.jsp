@@ -5,12 +5,19 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
 	<title>Booked</title>
 </head>
 <body>
+	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+	
+	<header class="masthead">
+
 	<div class="container">
-	  <h2>Sistema de Cadastramento de Alunos</h2>
+	  <div class="masthead-subheading">Sistema de Cadastramento de Alunos</div>
 
 		<c:if test="${not empty mensagem}">
 			<div class="alert alert-warning">
@@ -29,8 +36,9 @@
 	      <input type="password" class="form-control" placeholder="Entre com a sua senha" name="senha" value="123">
 	    </div>
 	    
-	    <button type="submit" class="btn btn-default">Entrar</button>
+	    <button type="submit">Entrar</button>
 	  </form>
 	</div>
+	</header>
 </body>
 </html> 

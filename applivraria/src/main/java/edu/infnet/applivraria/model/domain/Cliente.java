@@ -1,4 +1,4 @@
-package edu.infnet.applivraria.domain;
+package edu.infnet.applivraria.model.domain;
 
 import edu.infnet.applivraria.exceptions.CpfInvalidoException;
 import edu.infnet.applivraria.exceptions.EmailInvalidoException;

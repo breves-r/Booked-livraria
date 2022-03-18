@@ -1,10 +1,10 @@
 package edu.infnet.applivraria.testes;
 
-import edu.infnet.applivraria.domain.Cliente;
 import edu.infnet.applivraria.exceptions.CpfInvalidoException;
 import edu.infnet.applivraria.exceptions.EmailInvalidoException;
 import edu.infnet.applivraria.exceptions.NomeInvalidoException;
 import edu.infnet.applivraria.exceptions.TelefoneInvalidoException;
+import edu.infnet.applivraria.model.domain.Cliente;
 
 public class ClienteTeste {
 

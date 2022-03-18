@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@page import="java.util.List"%>
-<%@page import="edu.infnet.applivraria.model.domain.Aluno"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -16,52 +15,51 @@
 
 	<div class="container">
 	
-		<h4>Cadastramento de alunos:</h4>
+		<h4>Cadastramento de Produtos:</h4>
 
+		
  		<c:if test="${not empty mensagem}">
 			<div class="alert alert-success">
 				<strong>Confirmação!</strong> ${mensagem}
 			</div>
 		</c:if>
 
-		<form action="/aluno" method="get">
-			<button type="submit">Novo aluno</button>
-		</form>
+		
 
-		<c:if test="${not empty alunoLista}">
-			<p>Quantidade de alunos cadastrados: ${alunoLista.size()}</p>
+		<c:if test="${not empty produtoLista}">
+			<p>Quantidade de produtos cadastrados: ${produtoLista.size()}</p>
 			<table class="table table-dark table-striped">
 				<thead>
 					<tr>
-						<th>Nome</th>
-						<th>E-mail</th>
-						<th>Idade</th>
-						<th>Curso</th>
-						<th>Região</th>
+						<th>Id</th>
+						<th>Título</th>
+						<th>Autor</th>
+						<th>Qtd. de Páginas</th>
+						<th>Valor</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="a" items="${alunoLista}">
+					<c:forEach var="p" items="${produtoLista}">
 
 						<tr>
-							<td>${a.nome}</td>
-							<td>${a.email}</td>
-							<td>${a.idade}</td>
-							<td>${a.curso}</td>
-							<td>${a.regiao}</td>
-							<th><a href="/aluno/${a.id}/excluir">Excluir</a></th>
+							<td>${p.id}</td>
+							<td>${p.titulo}</td>
+							<td>${p.autor}</td>
+							<td>${p.qtdePaginas}</td>
+							<td>${p.valor}</td>
+							<th><a href="/produto/${p.id}/excluir">Excluir</a></th>
 						</tr>
 					</c:forEach>
 
 				</tbody>
 				<tfoot>
 					<tr>
-						<th>Nome</th>
-						<th>E-mail</th>
-						<th>Idade</th>
-						<th>Curso</th>
-						<th>Região</th>
+						<th>Id</th>
+						<th>Título</th>
+						<th>Autor</th>
+						<th>Qtd. de Páginas</th>
+						<th>Valor</th>
 						<th></th>
 					</tr>
 				</tfoot>
@@ -69,8 +67,8 @@
 
 		</c:if>
 
-		<c:if test="${empty alunoLista}">
-			<p>Não existem alunos cadastrados!!!</p>
+		<c:if test="${empty produtoLista}">
+			<p>Não existem produtos cadastrados!!!</p>
 		</c:if>
 
 	</div>

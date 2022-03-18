@@ -1,13 +1,21 @@
-package edu.infnet.applivraria.domain;
+package edu.infnet.applivraria.model.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 import edu.infnet.applivraria.exceptions.SerieInvalidaException;
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
 
+@Entity
+@Table(name = "TEscolar")
 public class Escolar extends Produto {
 	private String disciplina;
 	private int serie;
 	private boolean temRespostas;
 
+	public Escolar() {
+	}
+	
 	public Escolar(String titulo, String autor, int qtdePaginas, float valor) throws ValorInvalidoException {
 		super(titulo, autor, qtdePaginas, valor);
 	}

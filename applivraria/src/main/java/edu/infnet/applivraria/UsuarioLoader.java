@@ -5,8 +5,8 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import edu.infnet.applivraria.domain.Usuario;
-import edu.infnet.applivraria.service.UsuarioService;
+import edu.infnet.applivraria.model.domain.Usuario;
+import edu.infnet.applivraria.model.service.UsuarioService;
 
 
 
