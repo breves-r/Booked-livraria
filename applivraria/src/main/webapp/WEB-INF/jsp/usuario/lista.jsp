@@ -6,9 +6,9 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
 	<title>Booked</title>
 </head>
 
@@ -19,7 +19,7 @@
 
 	<div class="container" >	
 
-		<h4>Cadastramento de usuários:</h4>
+		<div class="masthead-subheading">Cadastramento de Usuários</div>
 
 		<c:if test="${not empty mensagem}">
 			<div class="alert alert-success">
@@ -34,6 +34,7 @@
 			      <tr>
 			        <th>Nome</th>
 			        <th>E-mail</th>
+			        <th>Endereço</th>
 			        <th>Admin</th>
 			        <th>Alunos</th>
 			        <th></th>
@@ -44,6 +45,7 @@
 			      <tr>
 			        <td>${u.nome}</td>
 			        <td>${u.email}</td>
+			        <td>${u.endereco.uf}</td>
 			        <td>${u.admin}</td>
 			        <td>${u.alunos.size()}</td>
 			        <td>
@@ -60,6 +62,7 @@
 			      <tr>
 			        <th>Nome</th>
 			        <th>E-mail</th>
+			        <th>Endereço</th>
 			        <th>Admin</th>
 			        <th>Alunos</th>
 			        <th></th>

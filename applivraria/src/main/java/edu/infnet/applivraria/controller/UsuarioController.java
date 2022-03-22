@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import edu.infnet.applivraria.model.domain.Endereco;
 import edu.infnet.applivraria.model.domain.Usuario;
 import edu.infnet.applivraria.model.service.UsuarioService;
 
@@ -32,7 +33,9 @@ public class UsuarioController {
 	}
 	
 	@PostMapping(value = "/usuario/incluir")
-	public String incluir(Usuario usuario){
+	public String incluir(Usuario usuario, Endereco endereco){
+		
+		usuario.setEndereco(endereco);
 		
 		usuarioService.incluir(usuario);
 		
@@ -52,7 +55,7 @@ public class UsuarioController {
 			model.addAttribute("mensagem", "Usuário inexistente.. impossível realizar a exclusão!!!");			
 		}
 		
-		return telaLista(model);
+		return "redirect:/usuarios";
 	}
 
 }

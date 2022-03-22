@@ -6,17 +6,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<title>Booked</title>
+		<meta charset="ISO-8859-1">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+		<title>Booked</title>
 </head>
 
 <body>
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
+	
+	<header class="masthead">
 
 	<div class="container">
 	
-		<h4>Cadastramento de alunos:</h4>
+		<div class="masthead-subheading">Cadastramento de alunos:</div>
 
  		<c:if test="${not empty mensagem}">
 			<div class="alert alert-success">
@@ -74,5 +79,6 @@
 		</c:if>
 
 	</div>
+</header>
 </body>
 </html>
