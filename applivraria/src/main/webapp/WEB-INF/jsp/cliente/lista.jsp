@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="java.util.List"%>
-<%@page import="edu.infnet.applivraria.model.domain.Aluno"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -21,7 +19,7 @@
 
 	<div class="container">
 	
-		<div class="masthead-subheading">Cadastramento de alunos:</div>
+		<div class="masthead-subheading">Cadastramento de clientes:</div>
 
  		<c:if test="${not empty mensagem}">
 			<div class="alert alert-success">
@@ -29,33 +27,31 @@
 			</div>
 		</c:if>
 
-		<form action="/aluno" method="get">
-			<button type="submit">Novo aluno</button>
+		<form action="/cliente" method="get">
+			<button type="submit" class="btn btn-primary">Novo cliente</button>
 		</form>
 
-		<c:if test="${not empty alunoLista}">
-			<p>Quantidade de alunos cadastrados: ${alunoLista.size()}</p>
+		<c:if test="${not empty clienteLista}">
+			<p>Quantidade de clientes cadastrados: ${clienteLista.size()}</p>
 			<table class="table table-dark table-striped">
 				<thead>
 					<tr>
 						<th>Nome</th>
 						<th>E-mail</th>
-						<th>Idade</th>
-						<th>Curso</th>
-						<th>Região</th>
+						<th>Telefone</th>
+						<th>CPF</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="a" items="${alunoLista}">
+					<c:forEach var="c" items="${clienteLista}">
 
 						<tr>
-							<td>${a.nome}</td>
-							<td>${a.email}</td>
-							<td>${a.idade}</td>
-							<td>${a.curso}</td>
-							<td>${a.regiao}</td>
-							<th><a href="/aluno/${a.id}/excluir">Excluir</a></th>
+							<td>${c.nome}</td>
+							<td>${c.email}</td>
+							<td>${c.telefone}</td>
+							<td>${c.cpf}</td>
+							<th><a href="/cliente/${c.id}/excluir">Excluir</a></th>
 						</tr>
 					</c:forEach>
 
@@ -64,9 +60,8 @@
 					<tr>
 						<th>Nome</th>
 						<th>E-mail</th>
-						<th>Idade</th>
-						<th>Curso</th>
-						<th>Região</th>
+						<th>Telefone</th>
+						<th>CPF</th>
 						<th></th>
 					</tr>
 				</tfoot>
@@ -74,8 +69,8 @@
 
 		</c:if>
 
-		<c:if test="${empty alunoLista}">
-			<p>Não existem alunos cadastrados!!!</p>
+		<c:if test="${empty clienteLista}">
+			<p>Não existem clientes cadastrados!!!</p>
 		</c:if>
 
 	</div>

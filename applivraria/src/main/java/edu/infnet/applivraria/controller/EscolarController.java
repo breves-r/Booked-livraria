@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import edu.infnet.applivraria.model.domain.Escolar;
+import edu.infnet.applivraria.model.domain.Usuario;
 import edu.infnet.applivraria.model.service.EscolarService;
 import edu.infnet.applivraria.model.service.ProdutoService;
 
@@ -21,8 +23,8 @@ public class EscolarController {
 	private ProdutoService produtoService;
 	
 	@GetMapping(value = "/escolares")
-	public String telaLista(Model model) {
-		model.addAttribute("escolarLista", escolarService.obterLista());
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
+		model.addAttribute("escolarLista", escolarService.obterLista(usuario));
 		return "escolar/lista";
 	}
 
@@ -32,7 +34,10 @@ public class EscolarController {
 	}
 	
 	@PostMapping(value = "/escolar/incluir")
-	public String incluir(Escolar escolar) {
+	public String incluir(Escolar escolar, @SessionAttribute("user") Usuario usuario) {
+		
+		escolar.setUsuario(usuario);
+		
 		produtoService.incluir(escolar);
 		
 		return "redirect:/escolares";

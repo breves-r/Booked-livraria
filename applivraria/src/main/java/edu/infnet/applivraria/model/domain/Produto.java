@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import edu.infnet.applivraria.exceptions.ValorInvalidoException;
@@ -23,6 +25,9 @@ public abstract class Produto {
 	private String autor;
 	private int qtdePaginas;
 	protected float valor;
+	@ManyToOne
+	@JoinColumn(name = "idusuario")
+	private Usuario usuario;
 	
 	public Produto() {
 	}
@@ -95,6 +100,14 @@ public abstract class Produto {
 
 	public void setValor(float valor) {
 		this.valor = valor;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 

@@ -36,7 +36,7 @@
 			        <th>E-mail</th>
 			        <th>Endereço</th>
 			        <th>Admin</th>
-			        <th>Alunos</th>
+			        <th>Clientes</th>
 			        <th></th>
 			      </tr>
 			    </thead>
@@ -47,7 +47,7 @@
 			        <td>${u.email}</td>
 			        <td>${u.endereco.uf}</td>
 			        <td>${u.admin}</td>
-			        <td>${u.alunos.size()}</td>
+			        <td>${u.clientes.size()}</td>
 			        <td>
 			        <c:if test="${user.admin}">
 			        	<c:if test="${user.id != u.id}">
@@ -64,7 +64,7 @@
 			        <th>E-mail</th>
 			        <th>Endereço</th>
 			        <th>Admin</th>
-			        <th>Alunos</th>
+			        <th>Clientes</th>
 			        <th></th>
 			      </tr>
 			    </tfoot>

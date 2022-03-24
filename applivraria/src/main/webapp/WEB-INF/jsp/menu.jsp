@@ -16,7 +16,7 @@
 			<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 				<c:if test="${not empty user}">
 					<li class="nav-item"><a class="nav-link" href="/usuarios">Usuário</a></li>
-					<li class="nav-item"><a class="nav-link" href="/alunos">Aluno</a></li>
+					<li class="nav-item"><a class="nav-link" href="/clientes">Cliente</a></li>
 					<li class="nav-item"><a class="nav-link" href="/produtos">Produtos</a></li>
 					<li class="nav-item"><a class="nav-link" href="/livros">Livro</a></li>
 					<li class="nav-item"><a class="nav-link" href="/escolares">Escolar</a></li>
