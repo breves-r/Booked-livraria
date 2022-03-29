@@ -32,6 +32,10 @@ public class Usuario {
 	@JoinColumn(name = "idusuario")
 	private List<Produto> produtos;
 	
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idusuario")
+	private List<Compra> compras;
+	
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "idendereco")	
 	private Endereco endereco;
@@ -102,5 +106,13 @@ public class Usuario {
 
 	public void setProdutos(List<Produto> produtos) {
 		this.produtos = produtos;
+	}
+
+	public List<Compra> getCompras() {
+		return compras;
+	}
+
+	public void setCompras(List<Compra> compras) {
+		this.compras = compras;
 	}
 }

@@ -68,7 +68,7 @@ public class ArquivoTeste {
 
 						try {
 							compra = new Compra(cliente);
-							compra.setformaPagamento(campos[1]);
+							compra.setFormaPagamento(campos[1]);
 							compra.setListaProdutos(produtos);
 
 						} catch (ClienteNuloException e) {

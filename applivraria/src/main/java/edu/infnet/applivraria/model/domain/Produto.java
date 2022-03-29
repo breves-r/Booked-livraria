@@ -1,5 +1,7 @@
 package edu.infnet.applivraria.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -28,6 +31,9 @@ public abstract class Produto {
 	@ManyToOne
 	@JoinColumn(name = "idusuario")
 	private Usuario usuario;
+	
+	@ManyToMany(mappedBy = "listaProdutos")
+	private List<Compra> compras;
 	
 	public Produto() {
 	}
@@ -108,6 +114,14 @@ public abstract class Produto {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public List<Compra> getCompras() {
+		return compras;
+	}
+
+	public void setCompras(List<Compra> compras) {
+		this.compras = compras;
 	}
 	
 

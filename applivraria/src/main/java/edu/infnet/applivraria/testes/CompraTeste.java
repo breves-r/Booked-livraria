@@ -74,7 +74,7 @@ public class CompraTeste {
 
 		try {
 			Compra compra = new Compra(cliente);
-			compra.setformaPagamento("Cartao");
+			compra.setFormaPagamento("Cartao");
 			compra.setListaProdutos(produtos);
 			
 			compra.impressao();;
