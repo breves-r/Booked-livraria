@@ -37,5 +37,9 @@ public class ProdutoService {
 		return (Collection<Produto>) produtoRepository.findAll(Sort.by(Sort.Direction.ASC, "autor")); 
 	}
 	
+	public Integer obterQtde() {
+		return (int) produtoRepository.count();
+	}
+	
 	
 }

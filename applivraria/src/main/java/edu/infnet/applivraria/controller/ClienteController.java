@@ -49,11 +49,14 @@ public class ClienteController {
 		Cliente cliente = clienteService.obterPorId(id);
 		
 		if(cliente != null) {
-			clienteService.excluir(id);
-			model.addAttribute("mensagem", "O cliente "+cliente.getNome()+" foi excluído com sucesso!!!"); 
-		}else {
-			model.addAttribute("mensagem", "cliente inexistente. Imporssível excluir!"); 
-		} 
+			try {
+				clienteService.excluir(id);
+			}catch(Exception e) {
+				model.addAttribute("mensagem", "Impossível realizar a exclusão. O cliente está associado a um pedido"); 
+				return telaLista(model, usuario);
+			}
+			
+		}
 		
 		return "redirect:/clientes";
 		//return telaLista(model, usuario);

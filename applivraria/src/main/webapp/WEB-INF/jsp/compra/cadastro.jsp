@@ -8,10 +8,14 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/custom.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
 <title>Booked</title>
 </head>
 <body>
+
+	<c:set var="botao" value=""/>
+	
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 	
 	<header class="masthead">
@@ -29,12 +33,19 @@
 			</div>
 			
 			<div class="form-group">
-				<label>Cliente:</label>
-				<select name="cliente.id" class="form-control">
-					<c:forEach var="c" items="${clienteLista}">
-						<option value="${c.id}">${c.nome}</option>
-					</c:forEach>
-				</select>
+				<c:if test="${not empty clienteLista}">
+					<label>Cliente:</label>
+					<select name="cliente.id" class="form-control">
+						<c:forEach var="c" items="${clienteLista}">
+							<option value="${c.id}">${c.nome}</option>
+						</c:forEach>
+					</select>
+				</c:if>
+				
+				<c:if test="${empty clienteLista}">
+					<label>Não existem clientes cadastrados!</label>
+					<c:set var="botao" value="disabled"/>
+				</c:if>
 			</div>
 
 
@@ -42,6 +53,7 @@
 <div class="col-md-6">
 
 			<div class="form-group">
+				<c:if test="${not empty produtoLista}">
 				<label>Produtos:</label>
 
 				<c:forEach var="p" items="${produtoLista}">
@@ -49,11 +61,19 @@
 					  <label><input type="checkbox" name="idsProdutos" value="${p.id}" checked> ${p.titulo}</label>
 					</div>
 				</c:forEach>	
+				
+				</c:if>
+				
+				<c:if test="${empty produtoLista}">
+					<label>Não existem produtos cadastrados!</label>
+					<c:set var="botao" value="disabled"/>
+				</c:if>
 			</div>
+			
 			
 </div>
 </div>
-			<button type="submit">Cadastrar</button>
+			<button ${botao} type="submit">Cadastrar</button>
 		</form>
 
 	</div>

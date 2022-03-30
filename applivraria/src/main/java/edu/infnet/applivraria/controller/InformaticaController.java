@@ -44,9 +44,20 @@ public class InformaticaController {
 	}
 	
 	@GetMapping(value = "/informatica/{id}/excluir")
-	public String excluir(@PathVariable Integer id) {
+	public String excluir(@PathVariable Integer id, @SessionAttribute("user") Usuario usuario, Model model) {
 
-		produtoService.excluir(id);
+		
+		Informatica informatica = (Informatica) produtoService.obterPorId(id);
+		
+		if(informatica != null) {
+			try {
+				produtoService.excluir(id);
+			}catch(Exception e) {
+				model.addAttribute("mensagem", "Impossível realizar a exclusão. O livro está associado a um pedido"); 
+				return telaLista(model, usuario);
+			}
+			
+		}
 
 		return "redirect:/informaticos";
 	}

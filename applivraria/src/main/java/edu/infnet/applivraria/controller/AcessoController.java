@@ -1,5 +1,8 @@
  package edu.infnet.applivraria.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +15,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import edu.infnet.applivraria.model.domain.Usuario;
+import edu.infnet.applivraria.model.service.ClienteService;
+import edu.infnet.applivraria.model.service.CompraService;
+import edu.infnet.applivraria.model.service.ProdutoService;
 import edu.infnet.applivraria.model.service.UsuarioService;
 
 @SessionAttributes("user")
@@ -20,9 +26,24 @@ public class AcessoController {
 	
 	@Autowired
 	private UsuarioService usuarioService;
+	@Autowired
+	private ClienteService clienteService;
+	@Autowired
+	private ProdutoService produtoService;
+	@Autowired
+	private CompraService compraService;
 
 	@GetMapping(value = "/")
-	public String telaHome() {
+	public String telaHome(Model model) {
+		
+		Map<String, Integer> mapa = new HashMap<String, Integer>();
+		
+		mapa.put("Clientes", clienteService.obterQtde());
+		mapa.put("Produtos", produtoService.obterQtde());
+		mapa.put("Compras", compraService.obterQtde());
+		
+		model.addAttribute("mapa", mapa);
+		
 		return "home";		
 	}
 	

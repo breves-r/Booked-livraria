@@ -8,6 +8,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/custom.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
 		<title>Booked</title>
 </head>
@@ -21,15 +22,17 @@
 	
 		<div class="masthead-subheading">Cadastramento de clientes:</div>
 
- 		<c:if test="${not empty mensagem}">
-			<div class="alert alert-success">
-				<strong>Confirmação!</strong> ${mensagem}
-			</div>
-		</c:if>
+ 		
 
 		<form action="/cliente" method="get">
 			<button type="submit" class="btn btn-primary">Novo cliente</button>
 		</form>
+		
+		<c:if test="${not empty mensagem}">
+			<div class="alert alert-warning">
+				${mensagem}
+			</div>
+		</c:if>
 
 		<c:if test="${not empty clienteLista}">
 			<p>Quantidade de clientes cadastrados: ${clienteLista.size()}</p>

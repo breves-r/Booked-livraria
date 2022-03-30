@@ -5,9 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
+import edu.infnet.applivraria.model.domain.Produto;
 import edu.infnet.applivraria.model.domain.Usuario;
 import edu.infnet.applivraria.model.service.ProdutoService;
 
@@ -23,16 +23,21 @@ public class ProdutoController {
 		return "produto/lista";
 	}
 
-	@PostMapping(value = "/produto/incluir")
-	public String incluir() {
-		System.out.println("Inclusão realizada com sucesso!!!");
-
-		return "redirect:/";
-	}
 
 	@GetMapping(value = "/produto/{id}/excluir")
-	public String excluir(@PathVariable Integer id) {
-		produtoService.excluir(id);
+	public String excluir(@PathVariable Integer id, @SessionAttribute("user") Usuario usuario, Model model) {
+		
+		Produto produto = produtoService.obterPorId(id);
+		
+		if(produto != null) {
+			try {
+				produtoService.excluir(id);
+			}catch(Exception e) {
+				model.addAttribute("mensagem", "Impossível realizar a exclusão. O produto está associado a um pedido"); 
+				return telaLista(model, usuario);
+			}
+			
+		}
 
 		return "redirect:/produtos";
 	}

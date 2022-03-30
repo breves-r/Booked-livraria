@@ -35,5 +35,9 @@ public class CompraService {
 	public Compra obterPorId(Integer id) {
 		return compraRepository.findById(id).orElse(null);
 	}
+	
+	public Integer obterQtde() {
+		return (int) compraRepository.count();
+	}
 
 }

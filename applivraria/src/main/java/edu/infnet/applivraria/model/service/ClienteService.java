@@ -36,5 +36,9 @@ public class ClienteService {
 	public Cliente obterPorId(Integer id) {
 		return clienteRepository.findById(id).orElse(null);
 	}
+	
+	public Integer obterQtde() {
+		return (int) clienteRepository.count();
+	}
 }
 

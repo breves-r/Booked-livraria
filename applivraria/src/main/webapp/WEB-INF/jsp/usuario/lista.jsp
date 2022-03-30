@@ -8,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/custom.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
 	<title>Booked</title>
 </head>
@@ -37,6 +38,8 @@
 			        <th>Endereço</th>
 			        <th>Admin</th>
 			        <th>Clientes</th>
+			        <th>Produtos</th>
+			        <th>Compras</th>
 			        <th></th>
 			      </tr>
 			    </thead>
@@ -48,6 +51,8 @@
 			        <td>${u.endereco.uf}</td>
 			        <td>${u.admin}</td>
 			        <td>${u.clientes.size()}</td>
+			        <td>${u.produtos.size()}</td>
+			        <td>${u.compras.size()}</td>
 			        <td>
 			        <c:if test="${user.admin}">
 			        	<c:if test="${user.id != u.id}">
@@ -65,6 +70,8 @@
 			        <th>Endereço</th>
 			        <th>Admin</th>
 			        <th>Clientes</th>
+			        <th>Produtos</th>
+			        <th>Compras</th>
 			        <th></th>
 			      </tr>
 			    </tfoot>
